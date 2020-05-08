@@ -2,14 +2,14 @@ package Queue;
 
 public class QueueCircularArray {
 
-	int size, front, cap;
+	int size, front,rear, cap;
 	int arr[];
 
 	public QueueCircularArray(int c) {
 		// TODO Auto-generated constructor stub
 		cap = c;
 		arr = new int[c];
-		front = size = 0;
+		rear=front = size = 0;
 	}
 
 	boolean isFull() {
@@ -20,24 +20,11 @@ public class QueueCircularArray {
 		return (size == 0);
 	}
 
-	public int getFront() {
-		if (isEmpty())
-			return -1;
-		else
-			return front;
-	}
-
-	public int getRear() {
-		if (isEmpty())
-			return -1;
-		else
-			return (front + size - 1 % cap);
-	}
 
 	void Enqueue(int x) {
 		if (isFull())
 			return;
-		int rear = getRear();
+		arr[rear]=x;
 		rear = (rear + 1) % cap;
 		size++;
 	}
