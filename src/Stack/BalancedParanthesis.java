@@ -1,4 +1,4 @@
-package practice;
+package Stack;
 
 import java.util.Stack;
 
@@ -19,7 +19,7 @@ public class BalancedParanthesis {
 			} else {
 				if (stk.isEmpty()) {
 					return false;
-				} else if (Matching(stk.peek(), s.charAt(i)) == false) {
+				} else if (!Matching(stk.peek(), s.charAt(i))) {
 					return false;
 				} else {
 					stk.pop();

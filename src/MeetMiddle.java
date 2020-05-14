@@ -1,4 +1,4 @@
-package practice;
+
 
 class Node {
 	int data;
